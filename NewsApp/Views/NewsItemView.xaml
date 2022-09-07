@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:TinyView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:TinyMvvm;assembly=TinyMvvm.Maui"
+             xmlns:vm="clr-namespace:NewsApp.ViewModels"
+             xmlns:models="clr-namespace:NewsApp.Models"
+             x:Class="NewsApp.Views.NewsItemView"
+             Title="{Binding Item.Title}" x:DataType="vm:NewsItemViewModel">
+    <ScrollView>
+    <VerticalStackLayout>
+        <Image Source="{Binding Item.Image}" HeightRequest="300" Aspect="AspectFill" />
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label 
+            Text="{Binding Item.Title}" FontSize="Subtitle" />
+            <Label 
+            Text="{Binding Item.Body}" FontSize="Body" />
+            <Label 
+            Text="{Binding Item.Published}" FontSize="Small" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+    </ScrollView>
+</mvvm:TinyView>
