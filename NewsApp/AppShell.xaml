@@ -6,10 +6,17 @@
     xmlns:views="clr-namespace:NewsApp.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <TabBar>
+
     <ShellContent
-        Title="Home"
+        Title="News"
         ContentTemplate="{DataTemplate views:MainView}"
         Route="MainPage" />
 
+        <ShellContent
+        Title="Bookmarks"
+        ContentTemplate="{DataTemplate views:BookmarkView}"
+        Route="Bookmarks" />
+    </TabBar>
 </Shell>
 

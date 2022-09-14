@@ -8,8 +8,7 @@
              Title="F1 News" x:DataType="vm:MainViewModel" Padding="20">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="DarkBackgroundColor">#333333</Color>
-            <Color x:Key="LightBackgroundColor">#999999</Color>
+          
 
         </ResourceDictionary>
 
@@ -20,13 +19,14 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:NewsItem">
                     <ContentView Padding="0,10">
-                        <ContentView.GestureRecognizers>
+                       
+                        <Frame Padding="0"
+BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}">
+                             <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Source={x:Reference NewsItems}, Path=BindingContext.Open}"
                                                   CommandParameter="{Binding}" />
 
-                        </ContentView.GestureRecognizers>
-                        <Frame Padding="0"
-BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}">
+                        </Frame.GestureRecognizers>
                             <VerticalStackLayout Padding="20">
                                 <Image Source="{Binding Image, Mode=OneTime}"
                                        HeightRequest="200"

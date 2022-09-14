@@ -31,7 +31,7 @@ public partial class MainViewModel : ViewModel
         }
         catch (Exception ex)
         {
-            //TODO: Handle exception
+            await HandleException(ex);
         }
 
         IsBusy = false;
@@ -39,7 +39,14 @@ public partial class MainViewModel : ViewModel
 
     private async Task OpenView(NewsItem item)
     {
-        await Navigation.NavigateTo(nameof(NewsItemViewModel), item);
+        try
+        {
+            await Navigation.NavigateTo(nameof(NewsItemViewModel), item);
+        }
+        catch (Exception ex)
+        {
+            await HandleException(ex);
+        }
     }
 }
 

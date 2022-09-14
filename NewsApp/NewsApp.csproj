@@ -51,6 +51,8 @@
 	  <None Remove="Services\" />
 	  <None Remove="TinyMvvm.Maui" />
 	  <None Remove="Models\" />
+	  <None Remove="CommunityToolkit.Maui" />
+	  <None Remove="TinyPubSub" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -65,8 +67,13 @@
 	  <MauiXaml Update="Views\NewsItemView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\BookmarkView.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="TinyMvvm.Maui" Version="4.0.1-pre9" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
+	  <PackageReference Include="TinyPubSub" Version="2.0.0-preview4" />
 	</ItemGroup>
 </Project>
